@@ -15,7 +15,7 @@ go run broker/broker.go -port=8030 -serverAddressesList="127.0.0.1:8038,127.0.0.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 After these commands you may wish to (in a new terminal) run a command like "go run ." or "go test -v -run=TestGol/-1$".
 
-The "parallel" directory contains the parallelised solution. Similarly, the "distributed" directory contains the distributed solution. The (report)[report.pdf] detailing our solution is called "report.pdf". We also produced a bunch of alternative solutions which used different techniques and were submitted for certain coursework extensions.
+The [parallel](parallel) directory contains the parallelised solution. Similarly, the [distributed](distributed) directory contains the distributed solution. We produced a short report discussing our solution: [report](report.pdf). We also produced a bunch of [alternative versions](Alternative Versions) which used different techniques and were submitted for certain coursework extensions. The [coursework brief](coursework-brief/README.md) outlines the project specification.
 
  
 
