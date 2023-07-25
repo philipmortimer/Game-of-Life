@@ -1,5 +1,9 @@
 ﻿# Game-of-Life
  An implementation of Conway's Game of Life using parallel and distributed computation. The 'board' used for the game is divided into chunks which are handled by different threads to allow for concurrent calculations. Low level synchronisation methods such as semaphores and mutex locks are used, in combination with more high level abstractions such as channels (used in the Go programming language). In the distributed section, board sections are sent to different computer nodes to be updated. A broker is used to co-ordinate this process. We used AWS to test the performance of our distributed solution. This work was completed as part of a coursework by myself and a coursemate and recieved a first class grade.
+Example screenshot of my Game of Life in action:
+
+![Gol Screenshot](https://github.com/philipmortimer/Game-of-Life/assets/64362945/839d9f13-cb10-42b5-bbaa-3917316cd0a1)
+
 Here is a video of the parralel solution in action:
 
 https://github.com/philipmortimer/Game-of-Life/assets/64362945/525b025f-0497-42e4-8c65-c3f646c1710a
@@ -15,7 +19,7 @@ go run broker/broker.go -port=8030 -serverAddressesList="127.0.0.1:8038,127.0.0.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 After these commands you may wish to (in a new terminal) run a command like "go run ." or "go test -v -run=TestGol/-1$".
 
-The [parallel](parallel) directory contains the parallelised solution. Similarly, the [distributed](distributed) directory contains the distributed solution. We produced a short report discussing our solution: [report](report.pdf). We also produced a bunch of [alternative versions](Alternative Versions) which used different techniques and were submitted for certain coursework extensions. The [coursework brief](coursework-brief/README.md) outlines the project specification.
+The [parallel](parallel) directory contains the parallelised solution. Similarly, the [distributed](distributed) directory contains the distributed solution. We produced a short report discussing our solution: [report](report.pdf). We also produced a number of [alternative versions](alternative-versions) which used different techniques and were submitted for certain coursework extensions. The [coursework brief](coursework-brief/README.md) outlines the project specification.
 
  
 
