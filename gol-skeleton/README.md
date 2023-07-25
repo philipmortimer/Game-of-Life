@@ -1,22 +1,5 @@
 # CSA Coursework: Game of Life
 
-**[Video Walkthrough of Parallel Component (note that submission date is incorrect in the video!) (skip to 04:20 to skip IntelliJ install and project opening steps)](https://web.microsoftstream.com/video/990e039f-4bc1-4b22-b0b1-ae895ee07163)** Please note that the rest of assignment will be introduced after reading week
-
-**[Alternative perspective on interfaces in Go done by George](https://web.microsoftstream.com/video/30a6b464-aa7a-4e56-abf8-3534275440e3)**
-
-
-**[Video Walkthrough of Distributed Component](https://web.microsoftstream.com/video/b4f92750-6f76-4f51-8d37-93413c3cb088)** 
-<!-- **[Coursework Q&A Recording](https://web.microsoftstream.com/video/ab833321-3a78-4c83-b87e-16ce1b5c244f)** -->
-
-**[Video Walkthrough of Report Component](https://web.microsoftstream.com/video/b5e8cf95-981c-4c26-8522-cc0210293d51)** Also see this document which accompanies the video: **[All report guidance with links collated into single document](https://github.com/UoB-CSA/gol-skeleton/blob/master/content/ReporGuidanceCollated.md)**
-
-
-This is the Computer Systems A summative coursework. The coursework is worth 80% of the unit mark. It is to be completed in your programming pairs. You must report any change to your pairing to the unit director *before* starting your assignment. It runs over 4 weeks (5 weeks including the reading week) and the deadline for submitting all your work is **Thursday 1st December 13:00**.
-
-Talk to each other regularly and make sure you manage your team well. Let us know about issues before they grow to affect your team’s performance. It is important to carefully manage your time for this assignment. Do not spend hours trying to debug on your own; use pair programming, seek help from our teaching assistants during scheduled labs and ask questions on Teams.
-
-**Do not plagiarise.** Both team members should understand all code developed in detail. 
-
 ## Task Overview
 
 ### Introduction
@@ -38,27 +21,16 @@ To help you along, you are given a simple skeleton project. The skeleton include
 
 You **must not** modify any of the files ending in `_test.go`. We will be using these tests to judge the correctness of your implementation.
 
-The skeleton code uses SDL. This is a basic graphics library which you already used in Imperative Programming unit. To install the library follow the following instructions:
-
-- **Linux Lab Machines** - SDL should already be installed and working.
-- **Personal Ubuntu PCs** - `sudo apt install libsdl2-dev`
-- **MacOS** - `brew install sdl2` or use the official [`.dmg` installer](https://www.libsdl.org/download-2.0.php).
-- **Other** - Consult the [official documentation](https://wiki.libsdl.org/Installation) or see our [experimental instructions for running natively on Windows](content/windows_sdl_native.md)
+The skeleton code uses SDL.
 
 ### Submission
 
 The coursework requires two independent implementations. You will be required to submit **both** implementations (assuming both were attempted). Every student is required to upload their full work to Blackboard. There will be three separate submissions points on Blackboard - one for the report and two for each implementation.
 
-- For the report, you must submit a single file called `report.pdf`. [report submission point - NOW AVAILABLE](https://www.ole.bris.ac.uk/webapps/assignment/uploadAssignment?content_id=_7367858_1&course_id=_252985_1&group_id=&mode=cpview)
-- For the parallel implementation, you must submit a single zip file called `parallel.zip`. It must contain all the code required to compile and run the program. [parallel submission point - NOW AVAILABLE](https://www.ole.bris.ac.uk/webapps/assignment/uploadAssignment?content_id=_7391279_1&course_id=_252985_1&group_id=&mode=cpview)
-- For the distributed implementation, you must submit a single zip file called `distributed.zip`. It must contain all the code required to compile and run the program. [distributed submission point - NOW AVAILABLE](https://www.ole.bris.ac.uk/webapps/assignment/uploadAssignment?content_id=_7391281_1&course_id=_252985_1&group_id=&mode=cpview)
-- If you have multiple versions, only submit the ones you wish us to check for correctness (one zip for parallel and one for distributed). Other versions may be shared via OneDrive with Sion, Pui and Michael.
-
-Submitting different filenames or file formats (e.g. `.docx`, `.tex`, `.7z` or `.rar`) will result in a mark penalty.
-
-You should be using `git` for version control, however, please don't include your `.git` directory in your submission. You can generate a correct archive using the command `git archive -o [FILENAME].zip HEAD`. 
-
-Make sure you submit it early (not last minute!) to avoid upload problems. **Each team member has to upload an identical copy of the team's work.**
+- For the report, you must submit a single file called `report.pdf`.
+- For the parallel implementation, you must submit a single zip file called `parallel.zip`. It must contain all the code required to compile and run the program.
+- For the distributed implementation, you must submit a single zip file called `distributed.zip`. It must contain all the code required to compile and run the program. 
+- If you have multiple versions, only submit the ones you wish us to check for correctness (one zip for parallel and one for distributed). Other versions may be shared via OneDrive.
 
 ## Stage 1 - Parallel Implementation
 
@@ -145,7 +117,7 @@ follow this sequence, and can jump straight to implementing the more advanced
 versions of the system if you feel confident about it.
 
 
-**IMPORTANT: You need to modify [the count_test](https://github.com/UoB-CSA/gol-skeleton/blob/master/count_test.go) when testing your distributed implementation by replacing lines 41-53 with:**
+**IMPORTANT: You need to modify the count_test when testing your distributed implementation by replacing lines 41-53 with:**
 
 ```
 for event := range events {
@@ -153,8 +125,6 @@ for event := range events {
     case gol.AliveCellsCount:
         var expected int
 ```
-
-There is a modified version of the test file available [here](https://seis.bristol.ac.uk/~sh1670/dist_count_test.go)
 
 ### Step 1
 
@@ -221,7 +191,7 @@ Reducing coupling between the "Local Controller" and the "GOL workers" is desira
 
 #### Largest Image
 
-*We created a [5120x5120 pgm file](http://seis.bristol.ac.uk/~sh1670/5120x5120.pgm) if you wish to test or benchmark your solution with a very large image.*
+*We created a 5120x5120 pgm file if you wish to test or benchmark your solution with a very large image.*
 
 ### Success Criteria
 
